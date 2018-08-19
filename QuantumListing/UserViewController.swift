@@ -546,7 +546,7 @@ class UserViewController: UIViewController ,BSKeyboardControlsDelegate, UITextVi
         let listing_info: NSDictionary = ["property_info":dict, "property_image":listing_images, "user_info":listing_user]
 
         vc.listing = listing_info
-
+        vc.scrollViewShouldMoveUp = false
         vc.isOwner = (listing_info["user_info"] as! NSDictionary)["user_id"] as! String == user!.user_id ? true : false
         self.navigationController?.pushViewController(vc, animated: true)
 
