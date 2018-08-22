@@ -118,7 +118,6 @@ class ListingTableViewCell: UITableViewCell {
     }
     
     func setImageURL(imageURL: String) {
-
         self.ivListing.setShowActivityIndicator(true)
         self.ivListing.setIndicatorStyle(.gray)
         self.ivListing.sd_setImage(with: URL(string: imageURL)!)

@@ -1079,6 +1079,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
 
         dc.listing = listing
         dc.isOwner = user_info["user_id"] as! String == user!.user_id ? true : false
+        dc.scrollViewShouldMoveUp = false
 
         self.navigationController?.pushViewController(dc, animated: true)
     }

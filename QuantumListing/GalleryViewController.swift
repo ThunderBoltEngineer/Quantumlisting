@@ -111,7 +111,6 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource {
         imageView.setIndicatorStyle(.gray)
         imageView.sd_setImage(with: URL(string: galleryUrls[indexPath.row])!)
 
-
         return cell
     }
 

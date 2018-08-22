@@ -99,16 +99,16 @@ class CardCell: UITableViewCell {
         vwPortrait.layer.cornerRadius = vwPortrait.bounds.width / 2.0
         vwPortrait.layer.masksToBounds = true
 
-        bgView.layer.borderWidth = 1
-        bgView.layer.borderColor = Utilities.borderGrayColor.cgColor
+        bgView.clipsToBounds = true
+        bgView.layer.cornerRadius = 8
         
+        bgView.layer.masksToBounds = false
         bgView.layer.shadowColor = UIColor.gray.cgColor
         bgView.layer.shadowOpacity = 0.3
         bgView.layer.shadowRadius = 4.0
-        bgView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        bgView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         
-        bgView.clipsToBounds = true
-        bgView.layer.cornerRadius = 4
+        
         
         self.selectionStyle = .none
     }
