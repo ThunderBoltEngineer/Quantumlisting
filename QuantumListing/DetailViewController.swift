@@ -523,12 +523,16 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         txtFTAvailable.text = listing_property?["area"] as? String
         txtDateAvailable.text = listing_property?["date_available"] as? String
         
+        let htmlData = NSString(string: listing_property?["description"] as? String ?? "No description").data(using: String.Encoding.unicode.rawValue)
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
+        let attributedString = try! NSAttributedString(data: htmlData!, options: options, documentAttributes: nil)
+        txtComments.attributedText = attributedString
 //        webDescription.loadHTMLString(listing_property?["description"] as? String ?? "", baseURL: nil)
 //        webDescription.evaluateJavaScript("document.getElementsByTagName('body')[0].style.fontFamily =\"-apple-system\"", completionHandler: nil)
 //        webDescription.evaluateJavaScript("document.getElementsByTagName('body')[0].style.fontSize = 20px", completionHandler: nil)
 //
-        let font = UIFont.systemFont(ofSize: 20)
-        webDescription.loadHTMLString("<span style=\"font-family: \(font.fontName); color: #21367B\">\(listing_property?["description"] as? String ?? "")</span>", baseURL: nil)
+//        let font = UIFont.systemFont(ofSize: 20)
+//        webDescription.loadHTMLString("<span style=\"font-family: \(font.fontName); color: #21367B\">\(listing_property?["description"] as? String ?? "")</span>", baseURL: nil)
         
         txtParking.text = listing_property?["parking"] as? String
         txtOffices.text = listing_property?["offices"] as? String
