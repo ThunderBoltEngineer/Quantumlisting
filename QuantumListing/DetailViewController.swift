@@ -14,8 +14,13 @@ import Alamofire
 import UXMPDFKit
 import WebKit
 
+protocol DetailViewControllerDelegate {
+    func didTapBack()
+}
 
 class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UICollectionViewDataSource{
+    
+    var delegate: DetailViewControllerDelegate?
 
     var lastDistance : CGFloat = 0.0
     var lastPoint = CGPoint.zero
@@ -816,6 +821,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             })
             let cancelAction = UIAlertAction(title: "Discard", style: UIAlertActionStyle.cancel) { (alert: UIAlertAction!) in
                 self.navigationController?.popViewController(animated: true)
+                self.delegate?.didTapBack()
             }
             alert.addAction(saveAction)
             alert.addAction(cancelAction)
@@ -823,6 +829,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         }
         else {
             self.navigationController?.popViewController(animated: true)
+            self.delegate?.didTapBack()
         }
     }
 

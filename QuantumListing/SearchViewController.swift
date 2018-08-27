@@ -44,6 +44,8 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     var raw_searches : NSMutableArray?  = NSMutableArray()
     var listing_list : NSMutableArray? = NSMutableArray()
     var currentIndex : Int = 0
+    
+    private var isBackFromDetailPage = false
 
 
     override func viewDidLoad() {
@@ -83,8 +85,14 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     }
 
     override func viewWillAppear(_ animated: Bool) {
-
+        
         self.navigationController?.isNavigationBarHidden = true
+        
+        if isBackFromDetailPage {
+            isBackFromDetailPage = false
+            return
+        }
+        
         if (is_trend == false && currentMode == 0) {
             if ((raw_searches?.count)! > 0) {
                 self.applyFilter()
@@ -111,10 +119,6 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         }
 
         self.cardView.isHidden = true
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
     }
 
     func getTrends() {
@@ -457,7 +461,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             "user_id": (user?.user_id)!,
             "latitude": String(format: "%f", (coordinate?.latitude)!),
             "longitude": String(format: "%f", (coordinate?.longitude)!),
-            "radius": "10",
+            "radius": "1",
             "size": "100"
         ]
 
@@ -1080,11 +1084,14 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         dc.listing = listing
         dc.isOwner = user_info["user_id"] as! String == user!.user_id ? true : false
         dc.scrollViewShouldMoveUp = false
+        dc.delegate = self
 
         self.navigationController?.pushViewController(dc, animated: true)
     }
+}
 
-
-
-
+extension SearchViewController: DetailViewControllerDelegate {
+    func didTapBack() {
+        isBackFromDetailPage = true
+    }
 }
