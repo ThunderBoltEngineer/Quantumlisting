@@ -73,7 +73,7 @@ class CardCell: UITableViewCell {
             self.ivListing.sd_setImage(with: URL(string: imageURL)!)
         }
         else {
-            self.ivListing.image = nil
+            self.ivListing.image = UIImage(named: "ico_placeholder")
         }
     }
     

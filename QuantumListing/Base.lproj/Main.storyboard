@@ -4108,6 +4108,9 @@ The effective date of these Terms of Use is September 16, 2013. These Terms of U
                                                     <outlet property="pageControl" destination="Wtl-du-9Bm" id="ylI-E1-Khs"/>
                                                 </connections>
                                             </view>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ud4-Ao-Qzo">
+                                                <rect key="frame" x="0.0" y="170" width="414" height="465"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jeg-lq-9lS">
                                                 <rect key="frame" x="0.0" y="585" width="414" height="50"/>
                                                 <subviews>
@@ -4686,11 +4689,14 @@ The effective date of these Terms of Use is September 16, 2013. These Terms of U
                                             <constraint firstAttribute="trailing" secondItem="jeg-lq-9lS" secondAttribute="trailing" id="3iC-mI-84q"/>
                                             <constraint firstItem="AFm-iM-Zdh" firstAttribute="leading" secondItem="Ujk-r5-Mlj" secondAttribute="leading" id="53G-yb-Jyz"/>
                                             <constraint firstAttribute="trailing" secondItem="eQH-1N-cFE" secondAttribute="trailing" id="5Sg-Pf-Nod"/>
+                                            <constraint firstItem="ud4-Ao-Qzo" firstAttribute="bottom" secondItem="jeg-lq-9lS" secondAttribute="bottom" id="B4c-fa-zn0"/>
+                                            <constraint firstItem="ud4-Ao-Qzo" firstAttribute="top" secondItem="LNO-M6-bxU" secondAttribute="top" id="Ctg-JJ-68V"/>
                                             <constraint firstItem="ZOz-8O-l13" firstAttribute="top" secondItem="LNO-M6-bxU" secondAttribute="bottom" constant="70" id="Elj-Ww-0KN"/>
                                             <constraint firstItem="AFm-iM-Zdh" firstAttribute="top" secondItem="ZOz-8O-l13" secondAttribute="bottom" constant="15" id="FX0-yo-nlH"/>
                                             <constraint firstItem="3iS-5h-G4X" firstAttribute="bottom" secondItem="jeg-lq-9lS" secondAttribute="bottom" constant="20" id="ICL-Yt-Nuu"/>
                                             <constraint firstAttribute="bottom" secondItem="dlr-fV-Yb5" secondAttribute="bottom" id="Jcr-6Y-tlF"/>
                                             <constraint firstItem="jeg-lq-9lS" firstAttribute="top" secondItem="LNO-M6-bxU" secondAttribute="bottom" id="KxW-tI-1xG"/>
+                                            <constraint firstItem="ud4-Ao-Qzo" firstAttribute="trailing" secondItem="LNO-M6-bxU" secondAttribute="trailing" id="LDq-iY-QXr"/>
                                             <constraint firstItem="LNO-M6-bxU" firstAttribute="top" secondItem="eQH-1N-cFE" secondAttribute="bottom" constant="15" id="MwQ-EZ-Kul"/>
                                             <constraint firstItem="ZOz-8O-l13" firstAttribute="top" secondItem="jeg-lq-9lS" secondAttribute="bottom" constant="20" id="Od5-IR-rch"/>
                                             <constraint firstAttribute="trailing" secondItem="bxU-qw-DTk" secondAttribute="trailing" constant="10" id="Pmr-Pt-TTK"/>
@@ -4708,6 +4714,7 @@ The effective date of these Terms of Use is September 16, 2013. These Terms of U
                                             <constraint firstAttribute="trailing" secondItem="sPU-A0-1Fh" secondAttribute="trailing" constant="20" id="ogb-qr-5tp"/>
                                             <constraint firstItem="78n-Bf-Kjs" firstAttribute="leading" secondItem="Ujk-r5-Mlj" secondAttribute="leading" id="pfJ-6t-AwN"/>
                                             <constraint firstItem="bxU-qw-DTk" firstAttribute="leading" secondItem="Ujk-r5-Mlj" secondAttribute="leading" constant="20" id="qtN-ZJ-8xr"/>
+                                            <constraint firstItem="ud4-Ao-Qzo" firstAttribute="leading" secondItem="LNO-M6-bxU" secondAttribute="leading" id="ryx-hd-FOw"/>
                                             <constraint firstItem="eQH-1N-cFE" firstAttribute="top" secondItem="bxU-qw-DTk" secondAttribute="bottom" id="sfv-Ce-fX4"/>
                                             <constraint firstItem="bxU-qw-DTk" firstAttribute="top" secondItem="pmn-an-8cB" secondAttribute="bottom" constant="10" id="uuO-Fm-vMc"/>
                                             <constraint firstItem="pmn-an-8cB" firstAttribute="top" secondItem="Ujk-r5-Mlj" secondAttribute="top" constant="15" id="wd9-r8-y7F"/>
@@ -4771,6 +4778,7 @@ The effective date of these Terms of Use is September 16, 2013. These Terms of U
                         <outlet property="collectionThumbnail" destination="E3l-50-jDh" id="req-Q4-sOH"/>
                         <outlet property="contentView" destination="Ujk-r5-Mlj" id="fc6-rU-xem"/>
                         <outlet property="heightOfContent" destination="lpw-hU-BCF" id="PRh-lP-W68"/>
+                        <outlet property="imgPlaceholder" destination="ud4-Ao-Qzo" id="dRy-eG-bdQ"/>
                         <outlet property="ivAvatar" destination="wfv-Gi-AJc" id="hTt-dH-Ylx"/>
                         <outlet property="kiLabel" destination="Z93-60-hSu" id="h8M-4Z-aRv"/>
                         <outlet property="lblBy" destination="DE2-t6-OIz" id="FFb-fL-cXH"/>
@@ -5393,6 +5401,7 @@ The effective date of these Terms of Use is September 16, 2013. These Terms of U
         <image name="home_login.png" width="13" height="13"/>
         <image name="home_register.png" width="155" height="124"/>
         <image name="home_stroke.png" width="283" height="1"/>
+        <image name="ico_placeholder" width="1024" height="1024"/>
         <image name="icon_delete_document.png" width="30" height="30"/>
         <image name="icon_globe.png" width="60" height="60"/>
         <image name="left_arrow@4x" width="9" height="7"/>

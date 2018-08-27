@@ -80,7 +80,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
 
     @IBOutlet weak var collectionThumbnail: UICollectionView!
 
-
+    @IBOutlet weak var imgPlaceholder: UIImageView!
+    
 
     var listing : NSDictionary?
     var isOwner : Bool?
@@ -356,7 +357,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
 
                     if resultImages != nil
                     {
-
+                        if resultImages!.count == 0 {
+                            self.imgPlaceholder.isHidden = false
+                            return
+                        }
+                        
                         for imgUrl in resultImages!
                         {
                             self.galleryUrls.append(imgUrl)

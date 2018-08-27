@@ -923,7 +923,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         let property_image = listing["property_image"] as? [String : String]
 
         if (property_image?["property_image"] ?? "").isEmpty {
-            ivListing.image = nil
+            ivListing.image = UIImage(named: "ico_placeholder")
         }
         else {
             ivListing.setIndicatorStyle(.gray)
