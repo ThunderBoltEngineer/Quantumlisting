@@ -263,5 +263,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func didTapSiteLink(_ sender: Any) {
+        UIApplication.shared.open(URL(string: "https://quantumlisting.com")!, options: [:], completionHandler: nil)
+    }
+    
 }
 
