@@ -74,16 +74,22 @@ class ListingTableViewController: UITableViewController, ListingCellDelegate, CL
     }
 
     func getFeed() {
+        var headers = Alamofire.SessionManager.defaultHTTPHeaders
+        
+        if let accessToken = user!.access_token as? String {
+            headers["Authorization"] = "Bearer \(accessToken)"
+        } else {
+            // redirect to login ???
+        }
+        
         let parameters = ["user_id": (user?.user_id)!, "property_type": "recent", "index": String.init(format: "%d", currentIndex!)]
 
         CircularSpinner.show("Loading", animated: true, type: .indeterminate, showDismissButton: false, delegate: nil)
         let urlString = BASE_URL + "/listings/getListings"
         print("API CALL: \(urlString)")
         print("Params: \(String(describing: parameters))")
-        Alamofire.request(urlString, method: .get, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-            print("Request: \(response.request?.httpMethod as! String) \(response.request!)")
-            print("Response: \(response.response?.statusCode as! Int) (\(response.data!))")
-            debugPrint(response.result)
+        
+        Alamofire.request(urlString, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
 
             switch response.result {
             case .success:
