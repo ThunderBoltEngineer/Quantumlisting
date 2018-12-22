@@ -137,10 +137,10 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="500"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugm-eB-qW6">
-                                <rect key="frame" x="127" y="481" width="160" height="70"/>
+                                <rect key="frame" x="167" y="481" width="80" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrQ-9c-QTf">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="5" y="0.0" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="GrQ-9c-QTf" secondAttribute="height" multiplier="1:1" id="Swd-9d-7Fz"/>
                                         </constraints>
@@ -149,10 +149,10 @@
                                             <action selector="onFBBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dxa-XY-JIK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fg-qj-Oi2">
-                                        <rect key="frame" x="90" y="0.0" width="70" height="70"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fg-qj-Oi2">
+                                        <rect key="frame" x="80" y="0.0" width="0.0" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="8fg-qj-Oi2" secondAttribute="height" multiplier="1:1" id="Upz-RK-mQH"/>
+                                            <constraint firstAttribute="width" id="JC8-vp-8qA"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="btn_tw.png"/>
                                         <connections>
@@ -162,10 +162,10 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="8fg-qj-Oi2" firstAttribute="centerY" secondItem="ugm-eB-qW6" secondAttribute="centerY" id="Mep-g2-v3w"/>
+                                    <constraint firstItem="GrQ-9c-QTf" firstAttribute="centerX" secondItem="ugm-eB-qW6" secondAttribute="centerX" id="OzA-X2-9zW"/>
                                     <constraint firstItem="8fg-qj-Oi2" firstAttribute="height" secondItem="ugm-eB-qW6" secondAttribute="height" id="bgk-5l-OJC"/>
                                     <constraint firstAttribute="height" constant="70" id="gvo-E8-PfP"/>
-                                    <constraint firstAttribute="width" secondItem="ugm-eB-qW6" secondAttribute="height" multiplier="16:7" id="gyG-KF-oyN"/>
-                                    <constraint firstItem="GrQ-9c-QTf" firstAttribute="leading" secondItem="ugm-eB-qW6" secondAttribute="leading" id="hE5-sK-JEf"/>
+                                    <constraint firstAttribute="width" secondItem="ugm-eB-qW6" secondAttribute="height" multiplier="8:7" id="gyG-KF-oyN"/>
                                     <constraint firstAttribute="trailing" secondItem="8fg-qj-Oi2" secondAttribute="trailing" id="oSI-Wv-XPA"/>
                                     <constraint firstItem="GrQ-9c-QTf" firstAttribute="height" secondItem="ugm-eB-qW6" secondAttribute="height" id="riu-02-YFT"/>
                                     <constraint firstItem="GrQ-9c-QTf" firstAttribute="centerY" secondItem="ugm-eB-qW6" secondAttribute="centerY" id="uvn-qC-gcM"/>
@@ -185,7 +185,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpY-GB-Ukc">
-                                <rect key="frame" x="166.66666666666666" y="592" width="81" height="1"/>
+                                <rect key="frame" x="171.66666666666666" y="592" width="71" height="1"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.25882352939999997" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="OzS-xT-Q3r"/>
@@ -195,9 +195,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbL-zc-pJh">
-                                <rect key="frame" x="166.66666666666666" y="571" width="81" height="29"/>
+                                <rect key="frame" x="171.66666666666666" y="571" width="71" height="29"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
-                                <state key="normal" title="How It Works">
+                                <state key="normal" title="Visit the site">
                                     <color key="titleColor" red="0.16078431369999999" green="0.25882352939999997" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -480,7 +480,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="website_contact_icon@4x" translatesAutoresizingMaskIntoConstraints="NO" id="QCE-bT-ApB">
-                                        <rect key="frame" x="15.999999999999996" y="9.6666666666666856" width="21.000000000000004" height="21"/>
+                                        <rect key="frame" x="16" y="-12" width="64" height="64"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2739,7 +2739,7 @@ The effective date of these Terms of Use is September 16, 2013. These Terms of U
                                     <rect key="frame" x="8" y="29" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BnC-cW-u0r" id="uuW-WT-L6l">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </tableViewCellContentView>
                                 </tableViewCell>
@@ -4024,7 +4024,7 @@ The effective date of these Terms of Use is September 16, 2013. These Terms of U
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1650"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="260" verticalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmn-an-8cB">
-                                                <rect key="frame" x="20" y="15" width="24" height="20"/>
+                                                <rect key="frame" x="20" y="15" width="73" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="IXt-lc-uKS"/>
                                                 </constraints>
