@@ -95,7 +95,13 @@ class RegisterViewController: UIViewController ,CircularSpinnerDelegate{
                         })
                     }
                     else {
-                        let alert = UIAlertController(title: "QuantumListing", message: JSON["message"] as? String, preferredStyle: UIAlertControllerStyle.alert)
+                        var message = JSON["message"] as? String ?? "Registration failed"
+                        
+                        if message == "This email was already used." {
+                            message = "This email address already exists in our system. Try logging in instead."
+                        }
+                        
+                        let alert = UIAlertController(title: "QuantumListing", message: message, preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
                     }
@@ -190,7 +196,9 @@ class RegisterViewController: UIViewController ,CircularSpinnerDelegate{
                         configureRootNav()
                     }
                     else {
-                        let alert = UIAlertController(title: "QuantumListing", message: JSON["message"] as? String, preferredStyle: UIAlertControllerStyle.alert)
+                        let message = JSON["message"] as? String ?? "Registration failed"
+                        
+                        let alert = UIAlertController(title: "QuantumListing", message: message, preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
                     }
@@ -209,5 +217,14 @@ class RegisterViewController: UIViewController ,CircularSpinnerDelegate{
         }
 
     }
-
+    
+    
+    @IBAction func didTapLogin(_ sender: Any) {
+        let loginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+        navigationController?.pushViewController(loginViewController, animated: false)
+        
+        navigationController?.viewControllers.remove(at: navigationController!.viewControllers.count - 2)
+    
+    }
+    
 }

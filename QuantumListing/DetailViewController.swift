@@ -210,6 +210,18 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        
+        let syndicationUrlAction = UIAlertAction(title: "Visit Syndication Site", style: .default) { (alert: UIAlertAction!) -> Void in
+            if let additionalUrl = self.listing_property?["additional_url"] as? String,
+                let url = URL(string: additionalUrl)
+                {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                let alert = UIAlertController(title: "QuantumListing", message: "Sorry, no syndication info found.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
 
         let watchVideoAction = UIAlertAction(title: "Watch Video", style: UIAlertActionStyle.default) { (alert: UIAlertAction!) in
             self.actPlayVideo()
@@ -239,6 +251,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         //actionSheet.addAction(viewAction)
         actionSheet.addAction(galleryAction)
         actionSheet.addAction(attachAction)
+        actionSheet.addAction(syndicationUrlAction)
         actionSheet.addAction(watchVideoAction)
         actionSheet.addAction(favAction)
         //actionSheet.addAction(flagAction)

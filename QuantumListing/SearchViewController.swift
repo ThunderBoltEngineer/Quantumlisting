@@ -462,7 +462,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             "latitude": String(format: "%f", (coordinate?.latitude)!),
             "longitude": String(format: "%f", (coordinate?.longitude)!),
             "radius": "1",
-            "size": "40"
+            "size": "15"
         ]
 
         let urlString = BASE_URL + "/listings/searchListingByLocation"

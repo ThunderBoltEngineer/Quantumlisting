@@ -102,9 +102,9 @@ class UserViewController: UIViewController ,BSKeyboardControlsDelegate, UITextVi
 
             btnAccount.isHidden = false
             btnSettings.isHidden = false
-            buttonWebsite.isUserInteractionEnabled = false
-            buttonPhone.isUserInteractionEnabled = false
-            buttonEmail.isUserInteractionEnabled = false
+//            buttonWebsite.isUserInteractionEnabled = false
+//            buttonPhone.isUserInteractionEnabled = false
+//            buttonEmail.isUserInteractionEnabled = false
             keyboardControls = BSKeyboardControls()
             keyboardControls?.delegate = self
 

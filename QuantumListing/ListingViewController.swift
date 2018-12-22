@@ -108,6 +108,10 @@ class ListingViewController: UIViewController ,UITextFieldDelegate, UITextViewDe
         resetFields()
         CircularSpinner.hide()
 
+        let alert = UIAlertController(title: "QuantumListing", message: "Your listing has been successfully added. To make it visible, go to the QuantumListing.com website, and edit your listing to publish and acknowledge the image rights.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+
         var headers = Alamofire.SessionManager.defaultHTTPHeaders
 
         if let accessToken = user!.access_token as? String {

@@ -38,7 +38,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        return 7
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -96,6 +96,10 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
             break
         case 5:
             UIApplication.shared.open(URL(string: "https://www.youtube.com/channel/UCXOX1z251Jk2_MCfJriwVqA")!, options: [:], completionHandler: nil)
+            break
+        case 6:
+            UIApplication.shared.open(URL(string: "https://calendly.com/david-417")!, options: [:], completionHandler: nil)
+            break
             break
         default:
             break

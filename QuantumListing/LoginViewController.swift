@@ -88,7 +88,9 @@ class LoginViewController: UIViewController {
                         configureRootNav()
                     }
                     else {
-                        let alert = UIAlertController(title: "QuantumListing", message: JSON["message"] as? String, preferredStyle: UIAlertControllerStyle.alert)
+                        let message = JSON["message"] as? String ?? "Login Failed"
+
+                        let alert = UIAlertController(title: "QuantumListing", message: message, preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
                     }
